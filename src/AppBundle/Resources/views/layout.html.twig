@@ -1,0 +1,26 @@
+{# src/AppBundle/Resources/views/layout.html.twig #}
+
+
+{% extends "::layout.html.twig" %}
+
+
+{% block title %}
+
+    Musée du Louvre - {{ parent() }}
+
+{% endblock %}
+
+
+{% block body %}
+
+    <h1>Musée du Louvre</h1>
+
+    <hr>
+
+
+    {% block app_body %}
+
+    {% endblock %}
+
+
+{% endblock %}
