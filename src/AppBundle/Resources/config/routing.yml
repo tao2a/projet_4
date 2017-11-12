@@ -1,6 +1,5 @@
 # src/AppBundle/Resources/config/routing.yml
 
-
 app_home:
     path:    /
     defaults:
