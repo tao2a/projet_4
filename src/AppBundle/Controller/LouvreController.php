@@ -17,4 +17,11 @@ class LouvreController extends Controller
         return $this->render('AppBundle:Louvre:index.html.twig');
 
     }
+
+    public function bookingAction()
+    {
+        return $this->render('AppBundle:Louvre:booking.html.twig');
+    }
+
+
 }

@@ -5,68 +5,129 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}Musée du Louvre{% endblock %}</title>
+    <title>{% block title %}Musée du Louvre {% endblock %}</title>
 
     {% block stylesheets %}
 
-        <link rel="stylesheet" href="../../web/style/style.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ asset('../web/font-awesome-4.7.0 3/css/font-awesome.css') }}">
 
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('font-awesome-4.7.0 3/css/font-awesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('style/style.css') }}">
     {% endblock %}
 
 </head>
 
 <body>
 
-<nav class="main-nav">
-    <div class="main-nav__logo">
-        <a class="main-nav__logo-link" href="{{ path('app_home') }}"><img src="../../web/uploads/Logo.png" alt="Logo du Louvre " class="louvre_logo"></a>
+<div class="nav-topnav-ico">
 
-<div class="reseau">
-        <a href="#" ><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
-        <a href="https://twitter.com/fred2a88"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/frédéric-d-278069130"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
-        <a href="https://github.com/tao2a/projet_4"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
+    <div class="topnav" id="myTopnav">
+        <a href="{{ path('app_home') }}" class="active"><img src="{{ asset('uploads/Logo.png') }}" alt="Logo du Louvre "
+                                                             class="louvre_logo"></a>
+        <a href="#">Informations pratiques</a>
+        <a href="#">Visites et activités</a>
+        <a href="#">Expositions et actualités</a>
+        <a href="#">Oeuvres et palais</a>
+        <a href="#">Arts et éducation</a>
+        <a href="{{ path('app_booking') }}">Billeterie</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        <hr/>
+    </div>
+
+    <div class="ico">
+
+        <a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/fred2a88"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/frédéric-d-278069130"><i class="fa fa-linkedin fa-2x"
+                                                                      aria-hidden="true"></i></a>
+        <a href="https://github.com/tao2a/projet_4"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+    </div>
+
 </div>
-</div>
-
-    <ul class="main-nav__menu">
-
-        <li class="main-nav__menu-item">
-            <a class="main-nav__menu-item-link" href="{{ path('app_home') }}">Informations pratiques</a>
-        </li>
-        <li class="main-nav__menu-item">
-            <a class="main-nav__menu-item-link" href="{{ path('app_home') }}">Visites et activités</a>
-        </li>
-        <li class="main-nav__menu-item">
-            <a class="main-nav__menu-item-link" href="{{ path('app_home') }}">Expositions et actualités</a>
-        </li>
-        <li class="main-nav__menu-item">
-            <a class="main-nav__menu-item-link" href="{{ path('app_home') }}">Oeuvres et palais</a>
-        </li>
-        <li class="main-nav__menu-item">
-            <a class="main-nav__menu-item-link" href="{{ path('app_home') }}">Arts et éducation</a>
-        </li>
-        <li class="main-nav__menu-item">
-            <a class="main-nav__menu-item-link" href="{{ path('app_home') }}">Billeterie</a>
-        </li>
-    </ul>
-</nav>
-
+<hr/>
 <div class="container">
 
-{% block body %}
+    {% block body %}
 
-{% endblock %}
+    {% endblock %}
 
+    <h3 style="text-align: center;">Comment se rendre au musée</h3>
+    <br />
+    <div id="row">
+
+        <div class="col-lg-6" id="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2624.86632777618!2d2.3301606368484595!3d48.86075932676096!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb975fcfa192f84d4!2sMus%C3%A9e+du+Louvre!5e0!3m2!1sfr!2sfr!4v1511115734827"
+                    width="500" height="50" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
+        <div class="col-lg-6"><p><strong>En métro</strong> : lignes 1 station Palais-Royal/musée du Louvre</p>
+            <p><strong>En bus</strong> : bus n° 21,24,27,39,48,68,69,72,81,95<br>
+                <strong>Paris l'Open Tour</strong> : arrêt face à la pyramide</p>
+            <p><strong>Stations Velib à proximité du musée</strong> :<br>
+                n°1015: 2 place A. Malraux<br>
+                n°1023: 165 rue Saint-Honoré<br>
+                n°1014: 5 rue de l’Echelle<br>
+                n°1013: 186 rue Saint-Honoré</p>
+            <p><strong>En voiture</strong> : un parc de stationnement souterrain est accessible par l'avenue du général
+                Lemonier, tous les jours de 7h00 à 23h00.</p>
+            <p><strong>En Batobus</strong> : Escale Louvre, quai François Mitterrand</p>
+            <p><strong>Depuis l'Aéroport d'Orly</strong> : RER C direction Champs de Mars-Tour Eiffel, descendre à
+                Saint-Michel Notre-Dame, marcher jusqu'à Saint Michel, prendre le bus 27 direction Saint Lazare,
+                descendre à Musée du Louvre, en face de la Pyramide.</p>
+            <p><strong>Depuis l'Aéroport Charles de Gaulle</strong> : RER B direction Massy-Palaiseau, changer à
+                Chatelet les Halles, prendre la ligne 14 direction Saint-Lazare, descendre à Pyramides et marcher
+                jusqu'au musée du Louvre ou bien prendre la ligne 1 et descendre à Palais-Royal / Musée du Louvre.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <hr/>
+    <footer class="topnav" id="myTopnav">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h2 class="logo"><a href="#"><img src="{{ asset('uploads/Logo.png') }}" alt="Logo du Louvre "
+                                                  class="louvre_logo"></a></h2>
+            </div>
+
+            <div class="col-lg-3">
+                <p><a href="#">Mentions légales</a></p>
+            </div>
+
+            <div class="col-lg-3">
+                <p><a href="#">A propos</a></p>
+            </div>
+
+            <div class="col-lg-3">
+                <p><a href="#">Conditions générales de vente</a></p>
+            </div>
+
+
+            <div class="col-lg-12"><p>&copy; Projet Kobayashi {{ 'now'|date('Y') }} and
+                    beyond.
+                    <i class="fa fa-hand-spock-o fa-lg"></i></p>
+            </div>
+        </div>
+    </footer>
 
 </div>
-</body>
 
-<footer>
-    <a href="#" ><p>Mentions légales</p></a>
-  <a href="#" ><p>Conditions générales de vente</p></a>
-    <p>&copy; Projet Kobayashi {{ 'now'|date('Y') }} and beyond. <i class="fa fa-hand-spock-o fa-lg"></i></p>
-</footer>
+</body>
+<script type="text/javascript">
+
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+
+
 </html>

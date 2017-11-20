@@ -5,3 +5,8 @@ app_home:
     defaults:
         _controller: AppBundle:Louvre:index
 
+app_booking:
+    path:    /booking
+    defaults:
+        _controller: AppBundle:Louvre:booking
+
