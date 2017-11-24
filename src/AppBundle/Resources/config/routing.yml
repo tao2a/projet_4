@@ -1,12 +1,19 @@
 # src/AppBundle/Resources/config/routing.yml
 
-app_home:
-    path:    /
-    defaults:
-        _controller: AppBundle:Louvre:index
-
 app_booking:
     path:    /booking
     defaults:
-        _controller: AppBundle:Louvre:booking
+        _controller: AppBundle:Louvre:addCustomer
+
+app_visitedate:
+    path:    /booking/visitdate
+    defaults:
+      _controller: AppBundle:Louvre:visitStep2
+
+app_tickets:
+    path:    /booking/visitdate/tickets
+    defaults:
+      _controller:  AppBundle:Louvre:visitStep3
+
+
 

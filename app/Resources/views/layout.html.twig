@@ -22,7 +22,7 @@
 <div class="nav-topnav-ico">
 
     <div class="topnav" id="myTopnav">
-        <a href="{{ path('app_home') }}" class="active"><img src="{{ asset('uploads/Logo.png') }}" alt="Logo du Louvre "
+        <a href="#" class="active"><img src="{{ asset('uploads/Logo.png') }}" alt="Logo du Louvre "
                                                              class="louvre_logo"></a>
         <a href="#">Informations pratiques</a>
         <a href="#">Visites et activités</a>
@@ -36,7 +36,6 @@
     </div>
 
     <div class="ico">
-
         <a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
         <a href="https://twitter.com/fred2a88"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
         <a href="https://www.linkedin.com/in/frédéric-d-278069130"><i class="fa fa-linkedin fa-2x"
@@ -46,12 +45,13 @@
 
 </div>
 <hr/>
+
+
+{% block body %}
+
+{% endblock %}
+<br/>
 <div class="container">
-
-    {% block body %}
-
-    {% endblock %}
-
     <h3 style="text-align: center;">Comment se rendre au musée</h3>
     <br/>
     <div id="row">

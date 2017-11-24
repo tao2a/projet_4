@@ -8,55 +8,86 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class Customer
  * @package AppBundle\Entity
- * @ORM\Entity
+ * @ORM\Table(name="customer")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CustomerRepository")
  */
 class Customer
 {
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank(groups={"step1"})
      */
     private $name;
 
     /**
-     *@ORM\Column(name="first_name", type="string", length=255)
+     * @ORM\Column(name="first_name", type="string", length=255)
+     * @Assert\NotBlank(groups={"step1"})
      */
     private $firstName;
 
     /**
      * @ORM\Column(name="street", type="text")
+     * @Assert\NotBlank(groups={"step1"})
      */
     private $street;
 
     /**
      * @ORM\Column(name="postal_code", type="integer")
      * @Assert\Range(
-     *     max=9999
+     *     max=99999,
+     *     groups={"step1"}
      * )
      */
     private $postalCode;
 
     /**
      * @ORM\Column(name="city", type="string", length=255)
+     * @Assert\NotBlank(groups={"step1"})
      */
     private $city;
 
     /**
      * @ORM\Column(name="country", type="string", length=255)
-     * @Assert\Country()
+     * @Assert\Country(groups={"step1"})
      */
     private $country;
+
+    /**
+     * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\Email(groups={"step1"})
+     */
+    private $email;
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getVisit()
+    {
+        return $this->visit;
+    }
+
+    /**
+     * @param mixed $visit
+     */
+    public function setVisit($visit)
+    {
+        $this->visit = $visit;
+    }
 
     /**
      * @return int
@@ -162,6 +193,21 @@ class Customer
         $this->country = $country;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
 
 
 }

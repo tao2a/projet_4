@@ -171,7 +171,7 @@
 
 /*CSS du formulaire*/
 
-input{
+.field{
 
     outline: none;
     border: none;
@@ -186,6 +186,22 @@ input{
     margin-bottom: 25px;
     margin-top: 25px;
 }
+
+.place{
+    outline: none;
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(6, 6, 6);
+    color: rgb(6, 6, 6);
+    font-size: 12px;
+    font-family: Courier, monospace;
+    height: auto;
+    font-weight: bold;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
 button{
 
     outline: none;
@@ -215,3 +231,38 @@ h1{
 .subtitle{
     text-align: center;
 }
+
+/*Page central app_home*/
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.column img {
+    margin-top: 12px;
+    width: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+    .column {
+        width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+

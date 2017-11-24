@@ -1,0 +1,64 @@
+{# src/AppBundle/Resources/views/Louvre/booking.html.twig #}
+
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block app_body %}
+
+
+    <div class="container">
+        <h2>Commande de billet</h2>
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+        {{ form_errors(form) }}
+
+        <div class="form-group">
+
+
+            <div class="col-sm-2 control-label">
+
+                {{ form_widget(form.visit.visitDate, "Date de la visite",  {'attr': {'class': 'place'}}) }}
+                {{ form_errors(form.visit.visitDate) }}
+
+                <div class="col-sm-2 control-label">
+                    {{ form_widget(form.visit.visitDate, {'attr': {'class': 'field'|date("m/d/Y")}}) }}
+                </div>
+            </div>
+
+            <div class="col-sm-2 control-label">
+
+                {{ form_widget(form.visit.nbBillet,"Nombre de billet", {'attr': {'class': 'place' }}) }}
+                {{ form_errors(form.visit.firstName) }}
+
+                <div class="col-sm-2 control-label">
+                    {{ form_widget(form.visit.nbBillet, {'attr': {'class': 'field'}}) }}
+                </div>
+            </div>
+            <div class="col-sm-2 control-label">
+
+                {{ form_widget(form.visit.alfDay, "Demi-journée",  {'attr': {'class': 'place' }}) }}
+                {{ form_errors(form.visit.alfDay) }}
+
+                <div class="col-sm-2 control-label">
+                    {{ form_widget(form.visit.alfDay, {'attr': {'class': 'field'}}) }}
+                </div>
+            </div>
+        </div>
+
+            <br>
+            <div class="col-sm-2 control-label">
+                {#{{ form_widget(form.Suivant, {'attr': {'class': 'btn btn-primary'}}) }}#}
+                <input type="submit" value="Suivant" class="btn btn-primary">
+            </div>
+        </div>
+
+
+        {{ form_rest(form) }}
+
+
+
+
+        {{ form_end(form) }}
+
+
+
+{% endblock app_body %}

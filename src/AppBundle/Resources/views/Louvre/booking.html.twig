@@ -3,44 +3,96 @@
 {% extends "AppBundle::layout.html.twig" %}
 
 {% block app_body %}
-    <div class="container-fluid">
 
-        <h1>Formulaire de réservation</h1>
 
-        <p class="subtitle">Nombre de places disponibles <span class="badge">1000</span></p>
-        <div class="row">
-            <input name="login" type="text" placeholder="Nom" class="col-lg-3" required
-                   autofocus><br/>
+    <div class="container">
+        <h2>Commande de billet</h2>
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+        {{ form_errors(form) }}
+
+        <div class="form-group">
+
+
+            {{ form_widget(form.customer.name,  {'attr': {'class': 'place', 'placeholder': "Nom" }}) }}
+            {{ form_errors(form.customer.name) }}
+
+
+            {{ form_widget(form.customer.name, {'attr': {'class': 'field'}}) }}
+
+
+            {{ form_widget(form.customer.firstName,  {'attr': {'class': 'place', 'placeholder': "Prénom" }}) }}
+            {{ form_errors(form.customer.firstName) }}
+
+
+            {{ form_widget(form.customer.firstName, {'attr': {'class': 'field'}}) }}
+
+
+
         </div>
 
-        <div class="row">
-            <input name="login" type="text" placeholder="Prénom" class="col-lg-3" required
-                   autofocus><br/>
-        </div>
-<h2>Adresse</h2>
-        <div class="row">
-            <input name="login" type="text" placeholder="Rue" class="col-lg-6" required
-                   autofocus><br/>
-        </div>
+        <h3>Adresse</h3><br/>
 
-        <div class="row">
-            <input name="login" type="text" placeholder="Code Postal" class="col-lg-2" required
-                   autofocus><br/>
-        </div>
+        <div class="form-group">
 
-        <div class="row">
-            <input name="login" type="text" placeholder="Ville" class="col-lg-3" required
-                   autofocus><br/>
-        </div>
+            {{ form_widget(form.customer.street,  {'attr': {'class': 'place', 'placeholder': "Rue" }}) }}
+            {{ form_errors(form.customer.street) }}
 
-        <div class="row">
-            <input name="login" type="text" placeholder="Pays" class="col-lg-3" required
-                   autofocus><br/>
-        </div>
 
-        <div class="row">
-        <button type="button" id="btn-perso" class="col-sm-1">Suivant</button>
-        <br/>
-        </div>
+            {{ form_widget(form.customer.street, {'attr': {'class': 'field'}}) }}
+
+        <br>
+
+
+        {{ form_widget(form.customer.postalCode,  {'attr': {'class': 'place', 'placeholder': "Code postal" }}) }}
+        {{ form_errors(form.customer.postalCode) }}
+
+
+        {{ form_widget(form.customer.postalCode, {'attr': {'class': 'field'}}) }}
+
+        <br>
+
+
+        {{ form_widget(form.customer.city,  {'attr': {'class': 'place', 'placeholder': "Ville" }}) }}
+        {{ form_errors(form.customer.city) }}
+
+
+        {{ form_widget(form.customer.city, {'attr': {'class': 'field'}}) }}
+
+        <br>
+
+
+        {{ form_widget(form.customer.country,  {'attr': {'class': 'place', 'placeholder': "Pays" }}) }}
+        {{ form_errors(form.customer.country) }}
+
+
+        {{ form_widget(form.customer.country, {'attr': {'class': 'field'}}) }}
+
+        <br>
+
+
+        {{ form_widget(form.customer.email,  {'attr': {'class': 'place', 'placeholder': "Email" }}) }}
+        {{ form_errors(form.customer.email) }}
+
+
+        {{ form_widget(form.customer.email, {'attr': {'class': 'field'}}) }}
+
+        <br>
+
+
+        {#{{ form_widget(form.Suivant, {'attr': {'class': 'btn btn-primary'}}) }}#}
+        <input type="submit" value="Suivant" class="btn btn-primary">
+
+
+
+
+    {{ form_rest(form) }}
+
+
+
+
+    {{ form_end(form) }}
+
     </div>
-{% endblock %}
+
+{% endblock app_body %}
